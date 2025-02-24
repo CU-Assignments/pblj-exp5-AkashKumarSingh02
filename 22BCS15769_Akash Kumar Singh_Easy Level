@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class AutoboxingUnboxingExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.println("Enter numbers (comma-separated): ");
+        String input = sc.nextLine();
+        String[] values = input.split(",");
+
+        for (String value : values) {
+            numbers.add(Integer.parseInt(value.trim())); 
+        }
+
+        int sum = calculateSum(numbers);
+        System.out.println("Sum of numbers: " + sum);
+        sc.close();
+    }
+
+    public static int calculateSum(ArrayList<Integer> numbers) {
+        int sum = 0;
+        for (Integer num : numbers) {
+            sum += num; 
+        }
+        return sum;
+    }
+}
